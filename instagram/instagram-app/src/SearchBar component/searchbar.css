@@ -1,0 +1,12 @@
+.searchbar-whole {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.search-field input[type="text"] {
+  /* border: 1px solid red; */
+  padding: 0.1rem 2rem;
+  text-align: center;
+}
