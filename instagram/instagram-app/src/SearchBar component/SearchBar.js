@@ -20,6 +20,10 @@ class SearchBar extends React.Component {
       <div className="searchbar-whole">
         <div className="search-icons">
           <i className="fab fa-instagram fa-2x" />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
+            alt="Instagram logo"
+          />
         </div>
         <div className="search-field">
           <form>
@@ -32,7 +36,11 @@ class SearchBar extends React.Component {
             />
           </form>
         </div>
-        <div className="nav-icons">c</div>
+        <div className="nav-icons">
+          <i class="far fa-compass fa-2x" />
+          <i class="far fa-heart fa-2x" />
+          <i class="far fa-user fa-2x" />
+        </div>
       </div>
     );
   }
