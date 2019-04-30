@@ -37,9 +37,9 @@ class SearchBar extends React.Component {
           </form>
         </div>
         <div className="nav-icons">
-          <i class="far fa-compass fa-2x" />
-          <i class="far fa-heart fa-2x" />
-          <i class="far fa-user fa-2x" />
+          <i className="far fa-compass fa-2x" />
+          <i className="far fa-heart fa-2x" />
+          <i className="far fa-user fa-2x" />
         </div>
       </div>
     );
