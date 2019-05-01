@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import posts from "./dummy-data";
 import SearchBar from "./components/SearchBar/SearchBarContainer";
 import PostsPage from "./components/Posts/PostsPage";
+import Login from "./components/Login/Login";
+import withAuthenticate from "./authentication/withAuthenticate";
 import "./App.css";
 
 class App extends Component {
@@ -28,7 +30,7 @@ class App extends Component {
     return (
       <div className="app">
         <SearchBar searchPosts={this.searchPosts} />
-        <PostsPage
+        <Auth
           posts={
             this.state.searchPosts.length > 0
               ? this.state.searchPosts
@@ -40,4 +42,11 @@ class App extends Component {
   }
 }
 
+const Auth = withAuthenticate(PostsPage)(Login);
+
 export default App;
+
+// posts={
+//   this.state.searchPosts.length > 0
+//     ? this.state.searchPosts
+//     : this.state.posts
