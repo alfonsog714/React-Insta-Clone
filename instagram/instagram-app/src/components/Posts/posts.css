@@ -57,3 +57,17 @@
 .like-section .fa-heart:hover {
   cursor: pointer;
 }
+
+button {
+  background: red;
+  border-style: none;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 20px auto;
+}
+
+button:hover {
+  cursor: pointer;
+}

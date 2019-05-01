@@ -5,11 +5,10 @@ import "./posts.css";
 const PostContainer = props => {
   return (
     <div className="posts-container-wrapper">
-      <button onClick={props.logOut}>Log Out</button>
-
       {props.posts.map(post => (
         <Post post={post} />
       ))}
+      <button onClick={props.logOut}>Log Out</button>
     </div>
   );
 };

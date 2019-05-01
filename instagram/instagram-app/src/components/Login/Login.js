@@ -1,4 +1,5 @@
 import React from "react";
+import "./login.css";
 
 class Login extends React.Component {
   constructor(props) {
@@ -24,23 +25,25 @@ class Login extends React.Component {
 
   render() {
     return (
-      <form className="login-form">
-        <input
-          type="text"
-          placeholder="Username"
-          value={this.state.username}
-          name="username"
-          onChange={this.handleInputChange}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={this.state.password}
-          name="username"
-          onChange={this.handleInputChange}
-        />
-        <button onClick={this.loginSubmit}>Log In</button>
-      </form>
+      <div className="login-wrapper">
+        <form className="login-form">
+          <input
+            type="text"
+            placeholder="Username"
+            value={this.state.username}
+            name="username"
+            onChange={this.handleInputChange}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={this.state.password}
+            name="password"
+            onChange={this.handleInputChange}
+          />
+          <button onClick={this.loginSubmit}>Log In</button>
+        </form>
+      </div>
     );
   }
 }
