@@ -1,4 +1,4 @@
-const users = [
+const posts = [
   {
     id: 0,
     username: "philzcoffee",
@@ -94,4 +94,4 @@ const users = [
   }
 ];
 
-export default users;
+export default posts;

@@ -1,37 +1,24 @@
 import React, { Component } from "react";
-import SearchBar from "./components/SearchBar component/SearchBar";
-import PostContainer from "./components/PostContainer component/PostContainer";
-import users from "./dummy-data";
+import posts from "./dummy-data";
+import SearchBar from "./components/SearchBar/SearchBarContainer";
+import PostContainer from "./components/Posts/PostContainer";
+import "./App.css";
 
 class App extends Component {
   state = {
-    users: users,
-    comments: users.map(user => {
-      return { comment: user.comments };
-    })
+    posts: []
   };
 
-  addComment = comment => {
-    this.setState({
-      ...this.state,
-      comments: [...this.state.comments, comment]
-    });
-  };
+  componentDidMount() {
+    this.setState({ posts });
+  }
 
   render() {
-    console.log(this.state.comments);
+    // console.log(this.state);
     return (
       <div className="app">
         <SearchBar />
-        <div className="posts">
-          {this.state.users.map(user => (
-            <PostContainer
-              user={user}
-              key={user.id}
-              comments={this.state.comments}
-            />
-          ))}
-        </div>
+        <PostContainer posts={posts} />
       </div>
     );
   }
