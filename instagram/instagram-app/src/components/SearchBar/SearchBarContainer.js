@@ -9,7 +9,11 @@ const SearchBar = props => {
         <img src={Logo} alt="IG Logo" className="ig-logo" />
       </div>
       <div className="search-input-container">
-        <input type="text" placeholder="Search..." />
+        <input
+          type="text"
+          placeholder="Search..."
+          onKeyDown={props.searchPosts}
+        />
       </div>
       <div className="social-icons">
         <i className="far fa-compass fa-2x" />

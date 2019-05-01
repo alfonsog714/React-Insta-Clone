@@ -3,6 +3,7 @@ import PostHeader from "./PostHeader";
 import LikeSection from "./LikeSection";
 import CommentContainer from "../Comments/CommentSectionContainer";
 import "./posts.css";
+import PropTypes from "prop-types";
 
 class Post extends Component {
   constructor(props) {
@@ -37,5 +38,14 @@ class Post extends Component {
     );
   }
 }
+
+Post.propTypes = {
+  post: PropTypes.shape({
+    username: PropTypes.string,
+    thumbnailUrl: PropTypes.string,
+    imageUrl: PropTypes.string,
+    likes: PropTypes.number
+  })
+};
 
 export default Post;

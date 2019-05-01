@@ -2,6 +2,7 @@ import React from "react";
 import Comment from "./Comment";
 import CommentInput from "./CommentInput";
 import "./comment.css";
+import PropTypes from "prop-types";
 
 class CommentContainer extends React.Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class CommentContainer extends React.Component {
     return (
       <div className="comment-section">
         {this.state.comments.map(c => (
-          <Comment comment={c} />
+          <Comment key={c.id} comment={c} />
         ))}
         <CommentInput
           comment={this.state.comment}
@@ -49,5 +50,15 @@ class CommentContainer extends React.Component {
     );
   }
 }
+
+CommentContainer.propTypes = {
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      username: PropTypes.username,
+      text: PropTypes.string
+    })
+  )
+};
 
 export default CommentContainer;

@@ -6,19 +6,35 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    posts: []
+    posts: [],
+    searchPosts: []
   };
 
   componentDidMount() {
     this.setState({ posts });
   }
 
+  searchPosts = e => {
+    const filteredPosts = this.state.posts.filter(post => {
+      if (post.username.includes(e.target.value)) {
+        return post;
+      }
+    });
+    this.setState({ searchPosts: filteredPosts });
+  };
+
   render() {
     // console.log(this.state);
     return (
       <div className="app">
-        <SearchBar />
-        <PostContainer posts={posts} />
+        <SearchBar searchPosts={this.searchPosts} />
+        <PostContainer
+          posts={
+            this.state.searchPosts.length > 0
+              ? this.state.searchPosts
+              : this.state.posts
+          }
+        />
       </div>
     );
   }
