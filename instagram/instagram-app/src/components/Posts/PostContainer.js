@@ -1,15 +1,24 @@
 import React from "react";
 import Post from "./Post";
-import "./posts.css";
+// import "./posts.css";
+import styled from "styled-components";
+
+const PostContainerWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  margin: 0 auto;
+`;
 
 const PostContainer = props => {
   return (
-    <div className="posts-container-wrapper">
+    <PostContainerWrapper>
       {props.posts.map(post => (
         <Post post={post} />
       ))}
       <button onClick={props.logOut}>Log Out</button>
-    </div>
+    </PostContainerWrapper>
   );
 };
 

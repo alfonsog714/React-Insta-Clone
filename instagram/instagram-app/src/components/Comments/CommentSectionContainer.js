@@ -1,7 +1,7 @@
 import React from "react";
 import Comment from "./Comment";
 import CommentInput from "./CommentInput";
-import "./comment.css";
+// import "./comment.css";
 import PropTypes from "prop-types";
 
 class CommentContainer extends React.Component {
