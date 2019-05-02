@@ -1,0 +1,37 @@
+.login-wrapper {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 500px;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.login-wrapper .login-form {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid blue; */
+  width: 80%;
+  margin: 0 auto;
+}
+
+.login-form input {
+  /* outline: 1px solid grey; */
+  margin: 10px 0;
+  padding: 0.6rem;
+}
+
+.login-form button {
+  background: green;
+  border-style: none;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.login-form button:hover {
+  cursor: pointer;
+}

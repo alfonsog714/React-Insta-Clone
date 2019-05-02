@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  /* border: 1px solid red; */
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(184, 179, 179, 0.555);
+  padding: 1rem;
+  background: #fff;
+}
+
+.logos {
+  height: 60px;
+}
+
+.ig-logo {
+  height: 100%;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icons i {
+  margin-left: 15px;
+  cursor: pointer;
+}

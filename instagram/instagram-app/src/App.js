@@ -1,40 +1,52 @@
 import React, { Component } from "react";
-import SearchBar from "./components/SearchBar component/SearchBar";
-import PostContainer from "./components/PostContainer component/PostContainer";
-import users from "./dummy-data";
+import posts from "./dummy-data";
+import SearchBar from "./components/SearchBar/SearchBarContainer";
+import PostsPage from "./components/Posts/PostsPage";
+import Login from "./components/Login/Login";
+import withAuthenticate from "./authentication/withAuthenticate";
+import "./App.css";
 
 class App extends Component {
   state = {
-    users: users,
-    comments: users.map(user => {
-      return { comment: user.comments };
-    })
+    posts: [],
+    searchPosts: []
   };
 
-  addComment = comment => {
-    this.setState({
-      ...this.state,
-      comments: [...this.state.comments, comment]
+  componentDidMount() {
+    this.setState({ posts });
+  }
+
+  searchPosts = e => {
+    const filteredPosts = this.state.posts.filter(post => {
+      if (post.username.includes(e.target.value)) {
+        return post;
+      }
     });
+    this.setState({ searchPosts: filteredPosts });
   };
 
   render() {
-    console.log(this.state.comments);
+    // console.log(this.state);
     return (
       <div className="app">
-        <SearchBar />
-        <div className="posts">
-          {this.state.users.map(user => (
-            <PostContainer
-              user={user}
-              key={user.id}
-              comments={this.state.comments}
-            />
-          ))}
-        </div>
+        <SearchBar searchPosts={this.searchPosts} />
+        <Auth
+          posts={
+            this.state.searchPosts.length > 0
+              ? this.state.searchPosts
+              : this.state.posts
+          }
+        />
       </div>
     );
   }
 }
 
+const Auth = withAuthenticate(PostsPage)(Login);
+
 export default App;
+
+// posts={
+//   this.state.searchPosts.length > 0
+//     ? this.state.searchPosts
+//     : this.state.posts
