@@ -1,12 +1,25 @@
 import React from "react";
-import "./comment.css";
+import styled from "styled-components";
+// import "./comment.css";
+
+const CommentDiv = styled.div`
+  padding: 0.3rem;
+`;
+
+const UsernameSpan = styled.span`
+  font-weight: 650;
+`;
+
+const CommentSpan = styled.span`
+  padding: 0.3rem;
+`;
 
 const Comment = props => {
   return (
-    <div className="comment-message">
-      <span className="username">{props.comment.username}</span>{" "}
-      <span className="comment">{props.comment.text}</span>
-    </div>
+    <CommentDiv>
+      <UsernameSpan className="username">{props.comment.username}</UsernameSpan>{" "}
+      <CommentSpan className="comment">{props.comment.text}</CommentSpan>
+    </CommentDiv>
   );
 };
 
